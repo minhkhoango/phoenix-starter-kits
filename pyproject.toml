@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phoenix-starter-kits"
+version = "0.1.0"
+authors = [
+  { name="Kai", email="kai@gmail.com" },
+]
+description = "Template-driven initialization for LLM applications with Phoenix observability."
+readme = "README.md"
+requires-python = ">=3.9,<4.0"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "click>=8.0.0",
+    "cookiecutter>=2.1.0",
+    "pyyaml>=6.0",
+    "dotenv (>=0.9.9,<0.10.0)",
+    "langchain (>=0.3.27,<0.4.0)",
+    "langchain-community (>=0.3.29,<0.4.0)",
+    "langchain-openai (>=0.3.32,<0.4.0)", 
+]
+
+[project.scripts]
+phoenix-starter-kits = "phoenix_starter_kits.cli:main"
+
+[tool.pylance]
+# Configuration for Pylance strict mode to enforce high code quality.
+# This ensures full type checking and helps catch potential bugs early.
+typeCheckingMode = "strict"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
