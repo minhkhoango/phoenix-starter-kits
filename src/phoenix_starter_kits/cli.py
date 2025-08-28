@@ -1,5 +1,5 @@
 import click
-from phoenix_starter_kits.commands.init import init_command
+from phoenix_starter_kits.commands.init import init_command # type: ignore[stub]
 
 @click.group()
 @click.version_option(package_name="phoenix-starter-kits")

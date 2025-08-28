@@ -4,22 +4,18 @@
 # ------------------------------------------------------------------------------
 import os
 import click
-from typing import List
-from phoenix_starter_kits.generators.project_generator import ProjectGenerator
-from phoenix_starter_kits.generators.template_engine import TemplateNotFoundException
+from phoenix_starter_kits.generators.project_generator import ProjectGenerator # type: ignore[stub]
+from phoenix_starter_kits.generators.template_engine import TemplateNotFoundException # type: ignore[stub]
 
 # --- Constants for available templates ---
 # Key Decision: Centralizing template names makes them easier to update and
 # reference in both the CLI choices and the generator logic.
-AVAILABLE_TEMPLATES: List[str] = ["langchain-rag"]
 
 @click.command("init")
 @click.option(
     "--template",
     "template_name",
-    type=click.Choice(AVAILABLE_TEMPLATES, case_sensitive=False),
-    required=True,
-    prompt="Select a template",
+    default="langchain-rag",
     help="The project template to use for initialization.",
 )
 @click.option(

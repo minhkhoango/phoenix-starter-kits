@@ -6,31 +6,33 @@ The goal is to drastically reduce the "Time-to-First-Trace" for new Phoenix user
 
 ## Quick Start
 
-1.  **Clone and install:**
+1.  **Install and generate project:**
     ```bash
     git clone https://github.com/minhkhoango/phoenix-starter-kits.git
     cd phoenix-starter-kits
-    python -m venv .venv
-    source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+    python -m venv .venv && source .venv/bin/activate
     pip install -e .
-    ```
-
-2.  **Generate a project:**
-    ```bash
     mkdir my-new-app && cd my-new-app
     phoenix-starter-kits init
     ```
 
-3.  **Set up and run your project:**
+2.  **Set up project:**
     ```bash
-    cd your-project-name  # Replace with actual project name
-    echo "OPENAI_API_KEY=your_api_key_here" > .env  # Get key from OpenAI platform
+    cd your-project-name
+    echo "OPENAI_API_KEY=your_api_key_here" > .env
     pip install -r requirements.txt
-    phoenix serve &  # Start Phoenix in background
-    python main.py   # Run your application
     ```
 
-4.  **View traces:** Open `http://127.0.0.1:6006` in your browser
+3.  **Start Phoenix and run app:**
+    ```bash
+    # Terminal 1: Start Phoenix
+    pkill -f "phoenix serve" || true
+    phoenix serve
+    
+    # Terminal 2: Run your app
+    python main.py
+    ```
+    View traces at `http://127.0.0.1:6006`
 
 ## Architecture
 
@@ -40,6 +42,7 @@ The goal is to drastically reduce the "Time-to-First-Trace" for new Phoenix user
 
 ## Troubleshooting
 
-- **Connection refused errors:** Ensure Phoenix is running (`phoenix serve`)
-- **API key errors:** Check your `.env` file contains valid `OPENAI_API_KEY`
+- **Connection refused:** Ensure Phoenix is running (`phoenix serve`) before running your app
+- **Startup failed:** Kill existing processes with `pkill -f "phoenix serve"`
+- **API key errors:** Check `.env` file contains valid `OPENAI_API_KEY`
 - **Import errors:** Run `pip install -r requirements.txt`
