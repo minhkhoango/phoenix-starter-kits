@@ -236,6 +236,7 @@ my-new-app/
 generated-*/
 test-projects/
 demo-*/
+data/
 
 # Template test outputs
 test_output/

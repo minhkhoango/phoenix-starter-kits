@@ -15,6 +15,8 @@ The goal is to drastically reduce the "Time-to-First-Trace" for new Phoenix user
     mkdir my-new-app && cd my-new-app
     phoenix-starter-kits init
     ```
+    You will be prompted to choose a template (`langchain-rag` or `llamaindex-qa`).
+
 
 2.  **Set up project:**
     ```bash
@@ -39,10 +41,3 @@ The goal is to drastically reduce the "Time-to-First-Trace" for new Phoenix user
 -   **CLI:** Built with `click` for robust and extensible command-line interfaces.
 -   **Templating:** Uses `cookiecutter` to generate projects from a set of predefined templates.
 -   **Standalone:** Designed as a separate package for easy testing, but architected for simple integration into the main `arize-phoenix` CLI in the future.
-
-## Troubleshooting
-
-- **Connection refused:** Ensure Phoenix is running (`phoenix serve`) before running your app
-- **Startup failed:** Kill existing processes with `pkill -f "phoenix serve"`
-- **API key errors:** Check `.env` file contains valid `OPENAI_API_KEY`
-- **Import errors:** Run `pip install -r requirements.txt`
