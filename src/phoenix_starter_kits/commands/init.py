@@ -63,10 +63,10 @@ def init_command(template_name: str, project_name: str, destination: str) -> Non
         click.secho("\nSuccess! Your project has been created at:", fg="green")
         click.echo(project_path)
         click.secho("\nNext steps:", fg="yellow")
-        click.echo(f"1. cd {os.path.basename(project_path)}")
-        click.echo("2. Set your OPENAI_API_KEY in the .env file")
-        click.echo("3. pip install -r requirements.txt")
-        click.echo("4. python main.py")
+        click.echo(f"cd {os.path.basename(project_path)}")
+        click.echo("Create .env file and add: OPENAI_API_KEY=your_api_key_here")
+        click.echo("pip install -r requirements.txt")
+        click.echo("python main.py")
 
     except TemplateNotFoundException as e:
         click.secho(f"Error: {e}", fg="red")
